@@ -10,6 +10,14 @@ export default class MarvelApiModel {
 			baseURL
 		});
 	}
+	formatMetadata(response) {
+		return {
+			offset: response['offset'],
+			limit: response['limit'],
+			total: response['total'],
+			count: response['count']
+		};
+	}
 	async createParams(args?: any) {
 		return await qs.stringify({ ...args, hash, ts, apikey });
 	}

@@ -9,6 +9,14 @@ export const Query = {
 			args.offset
 		);
 	},
+	async getCharacters(_, args, ctx: Context, info) {
+		return await ctx.charactersModel.getManyWithMetadata(
+			args.where,
+			args.orderBy,
+			args.limit,
+			args.offset
+		);
+	},
 	async getCharacter(_, args, ctx: Context, info) {
 		return await ctx.charactersModel.getOne(args.where);
 	},

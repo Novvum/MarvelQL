@@ -16,6 +16,18 @@ type Query {
 		limit: Int
 		orderBy: CharacterOrderBy
 	): [Character!]
+	allCharacters(
+		where: CharacterWhereInput
+		"""
+		Skips the specified number of resources in the result set.
+		"""
+		offset: Int
+		"""
+		Limit the result set to the specified number of resources.
+		"""
+		limit: Int
+		orderBy: CharacterOrderBy
+	): CharacterConnection!
 	"""
 	Fetches a single character by id.
 	"""
@@ -1093,4 +1105,86 @@ type MarvelUrl {
 	A full URL (including scheme, domain, and path).
 	"""
 	url: String
+}
+
+"""
+Metadata from Marvel's api response
+"""
+type _Metadata {
+	"""
+	Count of results offset
+	"""
+	offset: Int
+	"""
+	Count of results limited by response (default 20)
+	"""
+	limit: Int
+	"""
+	Total number of types (i.e Characters, Comics, etc...) available in the Marvel api
+	"""
+	total: Int
+	"""
+	Count of total results
+	"""
+	count: Int
+}
+
+type CharacterEdge {
+	node: Character
+	cursor: String
+}
+
+type CharacterConnection {
+	edges: [CharacterEdge!]
+	metadata: _Metadata
+}
+
+type ComicEdge {
+	node: Comic
+	cursor: String
+}
+
+type ComicConnection {
+	edges: [ComicEdge!]
+	metadata: _Metadata
+}
+
+type CreatorEdge {
+	node: Creator
+	cursor: String
+}
+
+type CreatorConnection {
+	edges: [CreatorEdge!]
+	metadata: _Metadata
+}
+
+type EventEdge {
+	node: Event
+	cursor: String
+}
+
+type EventConnection {
+	edges: [EventEdge!]
+	metadata: _Metadata
+}
+
+type SeriesEdge {
+	node: Series
+	cursor: String
+}
+
+type SeriesConnection {
+	edges: [SeriesEdge]
+	metadata: _Metadata
+}
+
+type StoryEdge {
+	node: Story
+	cursor: String
+}
+
+type StoryConnection {
+	edges: [StoryEdge!]
+	metadata: _Metadata
 }
