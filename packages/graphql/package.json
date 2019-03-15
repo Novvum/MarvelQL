@@ -5,9 +5,7 @@
 		"dev": "npm-run-all --parallel start playground",
 		"debug": "dotenv -- nodemon -e ts,graphql -x ts-node --inspect src/index.ts",
 		"playground": "graphql playground",
-		"download:cache": "ts-node .scripts/objects.ts",
-		"download:merge": "ts-node .scripts/merge.ts",
-		"builda": "rimraf dist && tsc",
+		"build": "rimraf dist && tsc",
 		"apollo:publish": "apollo schema:publish --endpoint=https://api.marvelql.com --key='service:marvelQL:31heDXzZ0JWmMz7L4zCuug'",
 		"deploy": "bash ./.scripts/deploy.sh"
 	},

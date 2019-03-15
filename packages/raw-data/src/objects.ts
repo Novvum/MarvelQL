@@ -9,9 +9,9 @@ import { URL } from 'url';
 import qs from 'qs';
 import { Agent } from 'https';
 import { existsSync, writeFileSync } from 'fs';
-import { hash, ts, apikey, baseURL } from '../src/utils';
+import { hash, ts, apikey, baseURL } from '@marvelql/core/src/utils';
 import fetch from 'isomorphic-fetch';
-const state = require("../src/cache/_state.json")
+const state = require("./data/_state.json")
 
 function normalizeUrl(url) {
 	return new URL(url).toString();
@@ -59,13 +59,13 @@ if (!existsSync(outfile)) {
 		.then((cache) => {
 			const data = JSON.stringify(cache, null, 2);
 			writeFileSync(
-				`src/cache/${name}/${name} ${startIdx}-${endIdx}.json`,
+				`src/data/${name} ${startIdx}-${endIdx}.json`,
 				data,
 				'utf-8'
 			);
 			state[name].cursor = endIdx;
 			writeFileSync(
-				`src/cache/_state.json`,
+				`src/data/_state.json`,
 				JSON.stringify(state, null, 2),
 				'utf-8'
 			);

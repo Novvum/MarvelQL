@@ -1,14 +1,19 @@
 {
-  "name": "@marvelql/raw-data",
+  "name": "@marvelql/data",
   "version": "1.0.0",
   "description": "",
   "main": "lib/main.js",
-  "scripts": {},
+  "scripts": {
+    "download:cache": "ts-node src/objects.ts",
+    "download:merge": "ts-node src/merge.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@marvelql/core": "^1.0.0",
     "@types/node": "^8.0.28",
+    "isomorphic-fetch": "^2.2.1",
     "json-concat": "^0.0.1"
   },
   "devDependencies": {

@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/main.js",
-  "scripts": {},
+  "scripts": {
+    "build": "rimraf dist && tsc"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",
