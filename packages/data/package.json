@@ -4,8 +4,8 @@
   "description": "",
   "main": "lib/main.js",
   "scripts": {
-    "download:cache": "ts-node src/objects.ts",
-    "download:merge": "ts-node src/merge.ts"
+    "download": "ts-node src/objects.ts",
+    "merge": "ts-node src/merge.ts"
   },
   "keywords": [],
   "author": "",
