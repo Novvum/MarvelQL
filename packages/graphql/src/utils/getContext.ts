@@ -1,14 +1,14 @@
 import * as jwt from "jsonwebtoken";
-import { Prisma } from "../generated/prisma";
-import MarvelApiModel from "../models/MarvelApiModel";
-import CharacterModel from "../models/CharacterModel";
-import ComicModel from "../models/ComicModel";
-import CreatorModel from "../models/CreatorModel";
-import EventModel from "../models/EventModel";
-import SeriesModel from "../models/SeriesModel";
-import StoryModel from "../models/StoryModel";
+// import { Prisma } from "../generated/prisma";
+import MarvelApiModel from "@marvelql/core/src/models/MarvelApiModel";
+import CharacterModel from "@marvelql/core/src/models/CharacterModel";
+import ComicModel from "@marvelql/core/src/models/ComicModel";
+import CreatorModel from "@marvelql/core/src/models/CreatorModel";
+import EventModel from "@marvelql/core/src/models/EventModel";
+import SeriesModel from "@marvelql/core/src/models/SeriesModel";
+import StoryModel from "@marvelql/core/src/models/StoryModel";
 export interface Context {
-	db: Prisma;
+	// db: Prisma;
 	api: MarvelApiModel;
 	charactersModel: CharacterModel;
 	comicsModel: ComicModel;

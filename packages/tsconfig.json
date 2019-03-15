@@ -1,0 +1,11 @@
+{
+    "files": [],
+    "references": [
+        {
+            "path": "graphql"
+        },
+        {
+            "path": "raw-data"
+        }
+    ]
+}

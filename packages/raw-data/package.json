@@ -1,0 +1,17 @@
+{
+  "name": "@marvelql/raw-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/main.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^8.0.28",
+    "json-concat": "^0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "~3.0.0"
+  }
+}

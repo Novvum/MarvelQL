@@ -1,81 +1,29 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
-
 jobs:
-  deploy:
-    filters:
-      branches:
-        only: master
+  build:
     docker:
-      # specify the version you desire here
-      - image: circleci/node:11.6.0
-        environment:
-          PRISMA_MARVEL_PRIVATE_KEY: 140a52c97a8ef92f028d89a543e83d711f9e80a0
-          PRISMA_MARVEL_API_KEY: ba0613cb148841f5091cb0075b5076d2
-          PRISMA_ENDPOINT: https://us1.prisma.sh/raj-singh/marvel-api/production
-          PRISMA_SECRET: mysecret123
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
+      - image: node:8
     working_directory: ~/repo
 
     steps:
       - checkout
+      - run: yarn --version
 
-      # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-13.1.2
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+          - v1-dependencies-{{ checksum "yarn.lock" }}
+          - v1-dependencies-
 
-      - run: yarn global add now@13.1.2
+      - run: yarn install --frozen-lockfile
+      - run: yarn bootstrap
+      - run: yarn build
+      - run: ls -la node_modules/@quramy
+      - run: ls -la node_modules/.bin
+
+      - run: yarn test
 
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-13.1.2
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
 
-      # run deploy!
-      - run: yarn deploy
-  publish-apollo:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:11.6.0
-    filters:
-      branches:
-        only: master
-    working_directory: ~/repo
-    steps:
-      - checkout
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-2.3.1
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - run: yarn global add apollo@2.3.1
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-2.3.1
-
-      # run tests!
-      - run: yarn apollo:publish
-
-workflows:
-  version: 2
-
-  deploy-publish:
-    jobs:
-      - deploy
-      - publish-apollo:
-          requires:
-            - deploy

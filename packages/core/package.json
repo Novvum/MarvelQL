@@ -1,0 +1,20 @@
+{
+  "name": "@marvelql/core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/main.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^8.0.28",
+    "axios": "^0.18.0",
+    "crypto": "^1.0.1",
+    "json-concat": "^0.0.1",
+    "qs": "^6.6.0"
+  },
+  "devDependencies": {
+    "typescript": "~3.0.0"
+  }
+}

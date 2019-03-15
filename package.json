@@ -1,41 +1,19 @@
 {
-	"name": "marvel-graphql",
-	"scripts": {
-		"start": "dotenv -- nodemon -e ts,graphql -x ts-node src/index.ts",
-		"dev": "npm-run-all --parallel start playground",
-		"debug": "dotenv -- nodemon -e ts,graphql -x ts-node --inspect src/index.ts",
-		"playground": "graphql playground",
-		"download:cache": "ts-node .scripts/objects.ts",
-		"download:merge": "ts-node .scripts/merge.ts",
-		"build": "rimraf dist && tsc",
-		"apollo:publish": "apollo schema:publish --endpoint=https://api.marvelql.com --key='service:marvelQL:31heDXzZ0JWmMz7L4zCuug'",
-		"deploy": "bash ./.scripts/deploy.sh"
-	},
-	"dependencies": {
-		"apollo-server": "^2.4.8",
-		"axios": "0.18.0",
-		"bcryptjs": "2.4.3",
-		"crypto": "1.0.1",
-		"graphql": "14.0.2",
-		"graphql-import": "0.7.1",
-		"graphql-iso-date": "^3.6.1",
-		"jsonwebtoken": "8.3.0",
-		"object-assign-deep": "0.4.0",
-		"path": "0.12.7",
-		"prisma-binding": "2.1.0",
-		"qs": "6.5.2"
-	},
-	"devDependencies": {
-		"@types/bcryptjs": "2.4.1",
-		"@types/graphql": "14.0.3",
-		"dotenv-cli": "1.4.0",
-		"graphql-cli": "2.16.4",
-		"json-concat": "^0.0.1",
-		"nodemon": "1.17.5",
-		"npm-run-all": "4.1.3",
-		"prisma": "1.11.1",
-		"rimraf": "2.6.2",
-		"ts-node": "6.2.0",
-		"typescript": "2.9.2"
-	}
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "tsc -b packages/x-core packages/x-cli",
+    "test": "lerna run test",
+    "clean": "rimraf packages/**/lib",
+    "start": "lerna run --parallel start --scope @marvelql/graphql"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.28",
+    "lerna": "^2.9.0",
+    "rimraf": "^2.6.2",
+    "typescript": "~3.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
