@@ -34,7 +34,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: yarn global add now@13.1.2 lerna
+      - run: yarn global add now@13.1.2
 
       - save_cache:
           paths:
@@ -42,7 +42,7 @@ jobs:
           key: v1-dependencies-13.1.2
 
       # run deploy!
-      - run: lerna run deploy --scope @marvelql/graphql
+      - run: yarn install && yarn lerna run deploy --scope @marvelql/graphql
   publish-apollo:
     docker:
       # specify the version you desire here
