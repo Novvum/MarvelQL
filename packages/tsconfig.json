@@ -5,7 +5,7 @@
             "path": "graphql"
         },
         {
-            "path": "raw-data"
+            "path": "data"
         }
     ]
 }
