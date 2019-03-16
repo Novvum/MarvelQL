@@ -42,7 +42,7 @@ jobs:
           key: v1-dependencies-13.1.2
 
       # run deploy!
-      - run: yarn install && yarn lerna run deploy --scope @marvelql/graphql
+      - run: yarn install && yarn bootstrap && yarn lerna run --parallel deploy --scope @marvelql/graphql
   publish-apollo:
     docker:
       # specify the version you desire here

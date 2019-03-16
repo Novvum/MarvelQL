@@ -2,18 +2,23 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "tsc -b packages/x-core packages/x-cli",
     "test": "lerna run test",
     "clean": "rimraf packages/**/lib",
     "start": "lerna run --parallel start --scope @marvelql/graphql"
   },
   "devDependencies": {
     "@types/node": "^8.0.28",
-    "lerna": "^2.9.0",
+    "lerna": "3.4.3",
     "rimraf": "^2.6.2",
-    "typescript": "~3.0.0"
+    "typescript": "2.9.2"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/graphql",
+      "**/graphql/**"
+    ]
+  }
 }
