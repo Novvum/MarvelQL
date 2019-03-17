@@ -1,11 +1,6 @@
 {
-  "extends": "../tsconfig.settings.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-    "lib": [
-      "esnext",
-      "dom"
-    ]
+    "lib": ["es2017", "esnext.asynciterable"]
   }
 }

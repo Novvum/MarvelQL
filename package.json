@@ -1,24 +1,57 @@
 {
+  "name": "este",
+  "version": "1.0.0",
   "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": "8.10.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "test": "lerna run test",
-    "clean": "rimraf packages/**/lib",
-    "start": "lerna run --parallel start --scope @marvelql/graphql"
+    "ts": "ts-node -T -r esm -r dotenv/config",
+    "ts:watch": "ts-node-dev --no-notify --transpileOnly -r esm -r dotenv/config",
+    "dev:workspaces": "wsrun --exclude-missing dev",
+    "dev:playground": "prisma playground --port 5000 --server-only",
+    "dev": "run-p dev:workspaces dev:playground",
+    "deps": "rimraf 'yarn.lock' 'node_modules' '**/node_modules' && yarn",
+    "lint": "eslint '**/*.{ts,tsx}'",
+    "lint:fix": "yarn lint --fix",
+    "gen": "wsrun --exclude-missing gen",
+    "tsc": "tsc",
+    "build": "wsrun --exclude-missing build",
+    "test": "run-s lint gen tsc build",
+    "start": "wsrun --exclude-missing start",
+    "docker:up": "cd prisma && docker-compose up -d && cd ../",
+    "docker:down": "cd prisma && docker-compose down && cd ../",
+    "env": "yarn ts scripts/env",
+    "prisma:generate": "prisma generate --env-file .env",
+    "prisma:deploy": "prisma deploy --env-file .env",
+    "prisma:delete": "prisma delete --env-file .env"
+  },
+  "dependencies": {
+    "esm": "^3.2.0",
+    "wsrun": "^3.6.2"
   },
   "devDependencies": {
-    "@types/node": "^8.0.28",
-    "lerna": "3.4.3",
-    "rimraf": "^2.6.2",
-    "typescript": "2.9.2"
-  },
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ],
-    "nohoist": [
-      "**/graphql",
-      "**/graphql/**"
-    ]
+    "@typescript-eslint/eslint-plugin": "^1.4.1",
+    "@typescript-eslint/parser": "^1.4.1",
+    "babel-plugin-module-resolver": "^3.1.2",
+    "dotenv": "^6.2.0",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-import-resolver-node": "^0.3.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.2.0",
+    "eslint-plugin-relay": "^1.0.0",
+    "prisma": "^1.26.6",
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.0.0",
+    "ts-node-dev": "^1.0.0-pre.32",
+    "typescript": "^3.2.2"
   }
 }

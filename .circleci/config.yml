@@ -13,6 +13,9 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:11.6.0
         environment:
+          NOW_TEAM: novvum
+          NOW_PROJECT: marvel-graphql
+          NOW_ALIAS: https://api.marvelql.com
           PRISMA_MARVEL_PRIVATE_KEY: 140a52c97a8ef92f028d89a543e83d711f9e80a0
           PRISMA_MARVEL_API_KEY: ba0613cb148841f5091cb0075b5076d2
           PRISMA_ENDPOINT: https://us1.prisma.sh/raj-singh/marvel-api/production

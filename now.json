@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "name": "marvelql",
+  "env": {
+    "API_SECRET": "api-secret",
+    "PRISMA_ENDPOINT": "prisma-endpoint",
+    "PRISMA_SECRET": "prisma-secret"
+  },
+  "builds": [
+    {
+      "src": "packages/graphql/index.ts",
+      "use": "@now/node-server@canary"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/packages/graphql"
+    }
+  ]
+}

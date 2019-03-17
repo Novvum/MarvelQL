@@ -5,5 +5,13 @@
     "moduleResolution": "node",
     "module": "commonjs",
     "sourceMap": true,
-  }
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": false,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules",
+    "**/generated/**/*.*"
+  ]
 }

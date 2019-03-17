@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/main.js",
+  "private": true,
   "scripts": {
     "download": "ts-node src/objects.ts",
     "merge": "ts-node src/merge.ts"
@@ -17,6 +18,6 @@
     "json-concat": "^0.0.1"
   },
   "devDependencies": {
-    "typescript": "~3.0.0"
+    "typescript": "2.9.2"
   }
 }
