@@ -11,7 +11,7 @@ jobs:
         only: master
     docker:
       # specify the version you desire here
-      - image: circleci/node:11.6.0
+      - image: circleci/node:8.10.0
         environment:
           NOW_TEAM: novvum
           NOW_PROJECT: marvel-graphql
@@ -37,7 +37,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: yarn global add now@13.1.2
+      - run: yarn install
 
       - save_cache:
           paths:
@@ -45,11 +45,11 @@ jobs:
           key: v1-dependencies-13.1.2
 
       # run deploy!
-      - run: yarn install && yarn bootstrap && yarn lerna run --parallel deploy --scope @marvelql/graphql
+      - run: yarn deploy
   publish-apollo:
     docker:
       # specify the version you desire here
-      - image: circleci/node:11.6.0
+      - image: circleci/node:8.10.0
     filters:
       branches:
         only: master
@@ -71,7 +71,7 @@ jobs:
           key: v1-dependencies-2.3.1
 
       # run tests!
-      - run: yarn lerna run apollo:publish --scope @marvelql/graphql
+      - run: yarn # lerna run apollo:publish --scope @marvelql/graphql
 
 workflows:
   version: 2

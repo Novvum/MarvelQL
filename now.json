@@ -3,9 +3,7 @@
   "name": "marvel-graphql",
   "alias": "api.marvelql.com",
   "env": {
-    "API_SECRET": "api-secret",
-    "PRISMA_ENDPOINT": "prisma-endpoint",
-    "PRISMA_SECRET": "prisma-secret"
+    "PRISMA_ENDPOINT": "prisma-endpoint"
   },
   "builds": [
     {
