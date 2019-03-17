@@ -1,7 +1,9 @@
 {
-  "extends": "../tsconfig.settings.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "lib"
+    "lib": [
+      "es2017",
+      "esnext.asynciterable"
+    ]
   }
 }

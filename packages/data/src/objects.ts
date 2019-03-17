@@ -9,7 +9,7 @@ import { URL } from 'url';
 import qs from 'qs';
 import { Agent } from 'https';
 import { existsSync, writeFileSync } from 'fs';
-import { hash, ts, apikey, baseURL } from '@marvelql/core/src/utils';
+import { hash, ts, apikey, baseURL } from '@marvelql/graphql/utils';
 import fetch from 'isomorphic-fetch';
 const state = require("./data/_state.json")
 
