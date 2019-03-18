@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
+  "bin": {
+    "ts-node": "dist/bin.js"
+  },
   "engines": {
     "node": "8.10.0"
   },
@@ -10,7 +13,10 @@
     "packages/*"
   ],
   "scripts": {
+    "ts": "ts-node -T -r esm -r dotenv/config",
+    "ts:watch": "ts-node-dev --no-notify --transpileOnly -r esm -r dotenv/config",
     "start": "yarn ts packages/graphql/index.ts",
+    "dev": "yarn ts:watch packages/graphql/index.ts",
     "deploy": "bash ./.scripts/deploy.sh"
   },
   "dependencies": {

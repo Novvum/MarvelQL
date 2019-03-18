@@ -1,16 +1,19 @@
 import crypto from 'crypto';
+import config from '../config';
 export type DateTime = Date | string;
 
 export const ts = Date.now();
 
-export const baseURL = 'https://gateway.marvel.com/v1/public';
+export const baseURL = config.baseURL;
 
 export const apikey =
-	process.env.PRISMA_MARVEL_API_KEY || '07812287fdfb880f5ebdbf1e5b9fce53';
+	config.MARVEL_API_KEY;
 
 const privateKey =
-	process.env.PRISMA_MARVEL_PRIVATE_KEY ||
-	'e23c321aab355ba04371c1e50cef43823ab35752';
+	config.MARVEL_PRIVATE_KEY;
+
+console.log(apikey, privateKey);
+
 const data = `${ts}${privateKey}${apikey}`;
 
 export function optionalChaining(func) {

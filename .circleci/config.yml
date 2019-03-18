@@ -5,47 +5,57 @@
 version: 2
 
 jobs:
-  deploy:
-    filters:
-      branches:
-        only: master
+  production:
     docker:
-      # specify the version you desire here
       - image: circleci/node:8.10.0
         environment:
-          NOW_TEAM: novvum
+          STAGE: production
           NOW_PROJECT: marvel-graphql
           NOW_ALIAS: https://api.marvelql.com
-          PRISMA_MARVEL_PRIVATE_KEY: 140a52c97a8ef92f028d89a543e83d711f9e80a0
-          PRISMA_MARVEL_API_KEY: ba0613cb148841f5091cb0075b5076d2
-          PRISMA_ENDPOINT: https://us1.prisma.sh/raj-singh/marvel-api/production
-          PRISMA_SECRET: mysecret123
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
+    filters:
+      branches:
+        only:
+          - master
     working_directory: ~/repo
-
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
             - v1-dependencies-13.1.2
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-
       - run: yarn install
-
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-13.1.2
-
-      # run deploy!
       - run: yarn deploy
+  
+  staging:
+    docker:
+      - image: circleci/node:8.10.0
+        environment:
+          STAGE: staging
+          NOW_PROJECT: marvel-graphql-staging
+          NOW_ALIAS: https://api.marvelql.com
+    filters:
+      branches:
+        ignore:
+          - master
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-13.1.2
+            - v1-dependencies-
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-13.1.2
+      - run: yarn deploy
+  
   publish-apollo:
     docker:
       # specify the version you desire here
