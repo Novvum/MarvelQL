@@ -2,6 +2,8 @@ const stage = process.env.STAGE || "staging";
 
 const config = {
     baseURL: 'https://gateway.marvel.com/v1/public',
+    stage,
+    ENGINE_API_KEY: process.env.ENGINE_API_KEY || 'service:marvelQL:31heDXzZ0JWmMz7L4zCuug',
     production: {
         MARVEL_API_KEY: process.env.MARVEL_API_KEY,
         MARVEL_PRIVATE_KEY: process.env.MARVEL_PRIVATE_KEY,

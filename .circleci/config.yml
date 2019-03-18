@@ -66,22 +66,25 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-2.3.1
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+      - run: sudo npm install --global apollo
 
-      - run: yarn global add apollo@2.3.1
+      # Start the GraphQL server.  If a different command is used to
+      # start the server, use it in place of `npm start` here.
+      - run:
+          name: Starting server
+          command: npm start
+          background: true
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-2.3.1
+      # make sure the server has enough time to start up before running
+      # commands against it
+      - run: sleep 5
 
-      # run tests!
-      - run: yarn # lerna run apollo:publish --scope @marvelql/graphql
+      # When running on the 'master' branch, push the latest version
+      # of the schema to Apollo Engine.
+      - run: |
+          if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            apollo service:push --tag=master
+          fi
 
 workflows:
   version: 2

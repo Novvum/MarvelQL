@@ -7,6 +7,7 @@ import CreatorModel from './models/CreatorModel';
 import EventModel from './models/EventModel';
 import SeriesModel from './models/SeriesModel';
 import StoryModel from './models/StoryModel';
+import config from './config';
 
 const server = new ApolloServer({
 	schema,
@@ -21,7 +22,7 @@ const server = new ApolloServer({
 		storiesModel: new StoryModel()
 	}),
 	engine: {
-		apiKey: 'service:marvelQL:31heDXzZ0JWmMz7L4zCuug'
+		apiKey: config.ENGINE_API_KEY,
 	},
 	playground: { version: '1.7.20' },
 	introspection: true
