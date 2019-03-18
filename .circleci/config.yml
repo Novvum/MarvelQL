@@ -37,7 +37,7 @@ jobs:
         environment:
           STAGE: staging
           NOW_PROJECT: marvel-graphql-staging
-          NOW_ALIAS: https://api.marvelql.com
+          NOW_ALIAS: https://staging.api.marvelql.com
     filters:
       branches:
         ignore:
