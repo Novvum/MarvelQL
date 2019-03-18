@@ -66,13 +66,13 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - run: sudo npm install --global apollo
+      - run: yarn install
 
       # Start the GraphQL server.  If a different command is used to
       # start the server, use it in place of `npm start` here.
       - run:
           name: Starting server
-          command: npm start
+          command: yarn start
           background: true
 
       # make sure the server has enough time to start up before running
@@ -83,7 +83,7 @@ jobs:
       # of the schema to Apollo Engine.
       - run: |
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            apollo service:push --tag=master
+            yarn apollo service:push --tag=master
           fi
 
 workflows:
