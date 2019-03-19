@@ -84,10 +84,10 @@ workflows:
             branches:
               ignore:
                 - master
-      - publish-apollo:
-          filters:
-            branches:
-              only:
-                - master
-          requires:
-            - production
+      - publish-apollo #:
+          # filters:
+          #   branches:
+          #     only:
+          #       - master
+          # requires:
+          #   - production
