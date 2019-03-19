@@ -1,2 +1,2 @@
-bash ./.scripts/generateEnvFile.sh
+# bash ./.scripts/generateEnvFile.sh
 bash ./.scripts/deploy-now.sh

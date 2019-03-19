@@ -19,4 +19,3 @@ now remove $PROJECT --yes --safe --token "$NOW_TOKEN" --scope $TEAM  || true
 
 # 5. Log results
 now ls $PROJECT --token "$NOW_TOKEN" --scope $TEAM || true
-now alias ls $PROJECT --token "$NOW_TOKEN" --scope $TEAM || true
