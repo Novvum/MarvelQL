@@ -12,10 +12,6 @@ jobs:
           STAGE: production
           NOW_PROJECT: marvel-graphql
           NOW_ALIAS: https://api.marvelql.com
-    filters:
-      branches:
-        only:
-          - master
     working_directory: ~/repo
     steps:
       - checkout
@@ -38,10 +34,6 @@ jobs:
           STAGE: staging
           NOW_PROJECT: marvel-graphql-staging
           NOW_ALIAS: https://staging.api.marvelql.com
-    filters:
-      branches:
-        ignore:
-          - master
     working_directory: ~/repo
     steps:
       - checkout
@@ -60,25 +52,19 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:8.10.0
-    filters:
-      branches:
-        only: master
     working_directory: ~/repo
     steps:
       - checkout
       - run: yarn install
-
       # Start the GraphQL server.  If a different command is used to
       # start the server, use it in place of `npm start` here.
       - run:
           name: Starting server
           command: yarn start
           background: true
-
       # make sure the server has enough time to start up before running
       # commands against it
       - run: sleep 5
-
       # When running on the 'master' branch, push the latest version
       # of the schema to Apollo Engine.
       - run: |
@@ -86,11 +72,22 @@ jobs:
 
 workflows:
   version: 2
-
   deploy-publish:
     jobs:
-      - production
-      - staging
+      - production:
+          filters:
+            branches:
+              only:
+                - master
+      - staging:
+          filters:
+            branches:
+              ignore:
+                - master
       - publish-apollo:
+          filters:
+            branches:
+              only:
+                - master
           requires:
             - production
