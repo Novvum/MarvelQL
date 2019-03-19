@@ -1,4 +1,5 @@
 import { Context } from '../utils/getContext';
+import config from '../config';
 
 export const Query = {
 	async characters(_, args, ctx: Context, info) {
@@ -66,5 +67,8 @@ export const Query = {
 	},
 	async getStory(_, args, ctx: Context, info) {
 		return await ctx.storiesModel.getOne(args.where);
+	},
+	engineInfo(_, args, ctx: Context, info) {
+		return JSON.stringify(config.engine)
 	}
 };

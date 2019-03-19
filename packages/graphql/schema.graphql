@@ -115,6 +115,7 @@ type Query {
 	Fetches a single story by id.
 	"""
 	getStory(where: StoriesWhereInput): Story
+	engineInfo: String
 }
 """
 Optional filters for characters. See notes on individual inputs below.
