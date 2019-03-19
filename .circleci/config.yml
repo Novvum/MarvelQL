@@ -82,9 +82,7 @@ jobs:
       # When running on the 'master' branch, push the latest version
       # of the schema to Apollo Engine.
       - run: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            yarn apollo service:push --tag=master
-          fi
+          yarn apollo service:push --tag="${CIRCLE_BRANCH}"
 
 workflows:
   version: 2
