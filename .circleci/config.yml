@@ -10,7 +10,6 @@ jobs:
       - image: circleci/node:8.10.0
         environment:
           STAGE: production
-          ENGINE_TAG: $CIRCLE_BRANCH
           NOW_PROJECT: marvel-graphql
           NOW_ALIAS: https://api.marvelql.com
     working_directory: ~/repo
@@ -33,7 +32,6 @@ jobs:
       - image: circleci/node:8.10.0
         environment:
           STAGE: staging
-          ENGINE_TAG: $CIRCLE_BRANCH
           NOW_PROJECT: marvel-graphql-staging
           NOW_ALIAS: https://staging.api.marvelql.com
     working_directory: ~/repo
