@@ -22,7 +22,8 @@ const server = new ApolloServer({
 		storiesModel: new StoryModel()
 	}),
 	engine: {
-		apiKey: config.ENGINE_API_KEY,
+		apiKey: config.engine.apiKey,
+		schemaTag: config.engine.schemaTag
 	},
 	playground: { version: '1.7.20' },
 	introspection: true
