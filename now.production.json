@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "name": "marvel-graphql",
   "alias": "api.marvelql.com",
   "env": {
     "MARVEL_API_KEY": "@marvel-public-key",

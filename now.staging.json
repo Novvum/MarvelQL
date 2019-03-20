@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "name": "marvel-graphql-staging",
+  "alias": "staging.api.marvelql.com",
+  "env": {
+    "MARVEL_API_KEY": "@marvel-public-key",
+    "MARVEL_PRIVATE_KEY": "@marvel-secret-key",
+    "MARVEL_API_KEY_STAGING": "@marvel-public-key-staging",
+    "MARVEL_PRIVATE_KEY_STAGING": "@marvel-secret-key-staging"
+  },
+  "builds": [
+    {
+      "src": "packages/graphql/index.ts",
+      "use": "@now/node-server@canary"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/packages/graphql"
+    }
+  ]
+}
