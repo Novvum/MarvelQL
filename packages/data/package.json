@@ -14,6 +14,7 @@
   "dependencies": {
     "@marvelql/graphql": "^1.0.0",
     "@types/node": "^8.0.28",
+    "dataloader": "^1.4.0",
     "isomorphic-fetch": "^2.2.1",
     "json-concat": "^0.0.1"
   },

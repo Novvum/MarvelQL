@@ -3,6 +3,8 @@ import { makeExecutableSchema } from 'graphql-tools';
 import { importSchema } from 'graphql-import';
 import * as path from 'path';
 import { GraphQLDateTime } from 'graphql-iso-date';
+import { makeSchema } from 'nexus';
+import * as types from './nexus';
 
 const resolvers = {
 	Query,

@@ -1,12 +1,12 @@
 import MarvelApiModel from './MarvelApiModel';
-import { EventsWhereInput, EventsOrderBy } from '../utils';
 import { formatThumbnail, getSummary } from '../utils/formatters';
+import { NexusGenInputs, NexusGenEnums } from "../schema/types";
 
 export default class EventModel extends MarvelApiModel {
 	constructor() {
 		super();
 	}
-	async getOne(where: EventsWhereInput) {
+	async getOne(where: NexusGenInputs["EventsWhereInput"]) {
 		try {
 			const params = await this.createParams({
 				...where
@@ -29,8 +29,8 @@ export default class EventModel extends MarvelApiModel {
 		}
 	}
 	async getMany(
-		where: EventsWhereInput,
-		orderBy: EventsOrderBy,
+		where: NexusGenInputs["EventsWhereInput"],
+		orderBy: NexusGenEnums["EventsOrderBy"],
 		offset: number,
 		limit: number
 	) {

@@ -1,12 +1,11 @@
 import MarvelApiModel from './MarvelApiModel';
-import { CreatorWhereInput, CreatorOrderBy, optionalChaining } from '../utils';
 import { formatThumbnail, getSummary } from '../utils/formatters';
-
+import { NexusGenInputs, NexusGenEnums } from "../schema/types";
 export default class CreatorModel extends MarvelApiModel {
 	constructor() {
 		super();
 	}
-	async getOne(where: CreatorWhereInput) {
+	async getOne(where: NexusGenInputs["CreatorWhereInput"]) {
 		try {
 			const params = await this.createParams({
 				...where
@@ -29,8 +28,8 @@ export default class CreatorModel extends MarvelApiModel {
 		}
 	}
 	async getMany(
-		where: CreatorWhereInput,
-		orderBy: CreatorOrderBy,
+		where: NexusGenInputs["CreatorWhereInput"],
+		orderBy: NexusGenEnums["CreatorOrderBy"],
 		offset: number,
 		limit: number
 	) {

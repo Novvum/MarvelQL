@@ -38,6 +38,7 @@ async function cacheResources() {
 			const response = await fetch(url, { agent });
 			const data = await response.json();
 			for (const obj of data.data.results) {
+				console.error(data.data.total, data.data.count)
 				cache[normalizeUrl(`${baseURL}/${name}/${obj.id}`)] = obj;
 			}
 			url = data.next;

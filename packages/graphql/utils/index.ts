@@ -12,8 +12,6 @@ export const apikey =
 const privateKey =
 	config.MARVEL_PRIVATE_KEY;
 
-console.log(apikey, privateKey);
-
 const data = `${ts}${privateKey}${apikey}`;
 
 export function optionalChaining(func) {

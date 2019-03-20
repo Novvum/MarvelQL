@@ -1,12 +1,12 @@
 import MarvelApiModel from './MarvelApiModel';
-import { StoriesWhereInput, StoriesOrderBy } from '../utils';
 import { formatThumbnail, getSummary } from '../utils/formatters';
+import { NexusGenInputs, NexusGenEnums } from "../schema/types";
 
 export default class StoryModel extends MarvelApiModel {
 	constructor() {
 		super();
 	}
-	async getOne(where: StoriesWhereInput) {
+	async getOne(where: NexusGenInputs["StoriesWhereInput"]) {
 		try {
 			const params = await this.createParams({
 				...where
@@ -29,8 +29,8 @@ export default class StoryModel extends MarvelApiModel {
 		}
 	}
 	async getMany(
-		where: StoriesWhereInput,
-		orderBy: StoriesOrderBy,
+		where: NexusGenInputs["StoriesWhereInput"],
+		orderBy: NexusGenEnums["StoriesOrderBy"],
 		offset: number,
 		limit: number
 	) {

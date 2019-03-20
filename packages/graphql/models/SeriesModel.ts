@@ -1,6 +1,7 @@
 import MarvelApiModel from './MarvelApiModel';
-import { SeriesWhereInput, SeriesOrderBy, optionalChaining } from '../utils';
+import { optionalChaining } from '../utils';
 import { formatThumbnail, getSummary } from '../utils/formatters';
+import { NexusGenInputs, NexusGenEnums } from "../schema/types";
 
 export default class SeriesModel extends MarvelApiModel {
 	constructor() {
@@ -22,7 +23,7 @@ export default class SeriesModel extends MarvelApiModel {
 		}
 		return input;
 	}
-	async getOne(where: SeriesWhereInput) {
+	async getOne(where: NexusGenInputs["SeriesWhereInput"]) {
 		try {
 			const input = this.getWhereArgs(where);
 			const params = await this.createParams({
@@ -47,8 +48,8 @@ export default class SeriesModel extends MarvelApiModel {
 		}
 	}
 	async getMany(
-		where: SeriesWhereInput,
-		orderBy: SeriesOrderBy,
+		where: NexusGenInputs["SeriesWhereInput"],
+		orderBy: NexusGenEnums["SeriesOrderBy"],
 		offset: number,
 		limit: number
 	) {
