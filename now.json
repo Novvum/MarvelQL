@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "alias": "api.marvelql.com",
   "env": {
     "MARVEL_API_KEY": "@marvel-public-key",
     "MARVEL_PRIVATE_KEY": "@marvel-secret-key",
