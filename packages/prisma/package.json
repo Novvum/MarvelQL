@@ -1,0 +1,19 @@
+{
+  "name": "@marvelql/prisma",
+  "version": "1.0.0",
+  "description": "prisma database",
+  "main": "index.ts",
+  "author": "Novvum",
+  "license": "MIT",
+  "scripts": {
+    "generate": "prisma generate",
+    "deploy": "prisma deploy"
+  },
+  "dependencies": {
+    "graphql": "^14.1.1",
+    "prisma-client-lib": "^1.29.0"
+  },
+  "devDependencies": {
+    "prisma": "^1.29.0"
+  }
+}

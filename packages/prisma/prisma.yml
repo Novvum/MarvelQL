@@ -1,0 +1,6 @@
+endpoint: https://us1.prisma.sh/novvumio/marvelql/production
+datamodel: datamodel.prisma
+
+generate:
+  - generator: typescript-client
+    output: ./
