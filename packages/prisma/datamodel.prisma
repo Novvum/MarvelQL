@@ -1,0 +1,169 @@
+type Character {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  resourceURI: String
+  thumbnail: String
+  modified: String
+  name: String
+  description: String
+  urls: [MarvelUrl!]
+  comics: [Comic!]
+  series: [Series!]!
+  events: [Event!]!
+  stories: [Story!]!
+}
+
+type Comic {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  resourceURI: String
+  thumbnail: String
+  modified: String
+  digitalId: Int
+  title: String
+  issueNumber: Int
+  variantDescription: String
+  description: String
+  isbn: String
+  upc: String
+  diamondCode: String
+  ean: String
+  issn: String
+  format: String
+  textObjects: [TextObject!]
+  urls: [MarvelUrl!]
+  series: Series
+  # variants: [Summary!]
+  # collections: [Summary!]
+  # collectedIssues: [Summary!]
+  dates: [ComicDate!]
+  prices: [ComicPrice!]
+  images: [ComicImage!]
+  characters: [Character!]!
+  events: [Event!]!
+  stories: [Story!]!
+  creators: [Creator!]!
+}
+
+type ComicDate {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  type: String
+  date: String
+}
+
+type ComicImage {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  path: String
+  extension: String
+}
+
+type ComicPrice {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  type: String
+  price: Int
+}
+
+type Creator {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  resourceURI: String
+  thumbnail: String
+  modified: String
+  firstName: String
+  middleName: String
+  lastName: String
+  suffix: String
+  fullName: String
+  urls: [MarvelUrl!]
+  series: [Series!]!
+  stories: [Story!]!
+  comics: [Comic!]!
+  events: [Event!]!
+}
+
+type Event {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  resourceURI: String
+  thumbnail: String
+  modified: String
+  title: String
+  description: String
+  urls: [MarvelUrl!]
+  start: String
+  end: String
+  series: [Series!]!
+  stories: [Story!]!
+  comics: [Comic!]!
+  characters: [Character!]!
+  creators: [Creator!]!
+  next: Event @relation(name: "EventRelation")
+  previous: Event @relation(name: "EventRelation")
+}
+
+type MarvelUrl {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  type: String
+  url: String
+}
+
+type Series {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  resourceURI: String
+  thumbnail: String
+  modified: String
+  title: String
+  description: String
+  urls: [MarvelUrl!]
+  startYear: Int
+  endYear: Int
+  rating: String
+  comics: [Comic!]!
+  stories: [Story!]!
+  events: [Event!]!
+  characters: [Character!]!
+  creators: [Creator!]!
+  next: Series @relation(name: "SeriesRelation")
+  previous: Series @relation(name: "SeriesRelation")
+}
+
+type Story {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  resourceURI: String
+  thumbnail: String
+  modified: String
+  title: String
+  description: String
+  type: String
+  comics: [Comic!]!
+  events: [Event!]!
+  characters: [Character!]!
+  creators: [Creator!]!
+  series: [Series!]!
+  originalIssue: Story
+}
+
+type TextObject {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  type: String
+  language: String
+  text: String
+}

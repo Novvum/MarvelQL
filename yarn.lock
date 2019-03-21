@@ -4920,7 +4920,7 @@ prisma-cli-engine@1.29.0:
     treeify "^1.0.1"
     update-notifier "^2.3.0"
 
-prisma-client-lib@1.29.0, prisma-client-lib@^1.22.2:
+prisma-client-lib@1.29.0, prisma-client-lib@^1.22.2, prisma-client-lib@^1.29.0:
   version "1.29.0"
   resolved "https://registry.npmjs.org/prisma-client-lib/-/prisma-client-lib-1.29.0.tgz#46967d42662c9f9112ec9d1e47d257c7be4195fd"
   dependencies:
@@ -5024,7 +5024,7 @@ prisma-yml@1.29.0:
     scuid "^1.0.2"
     yaml-ast-parser "^0.0.40"
 
-prisma@^1.26.6:
+prisma@^1.26.6, prisma@^1.29.0:
   version "1.29.0"
   resolved "https://registry.npmjs.org/prisma/-/prisma-1.29.0.tgz#59369e655d8634b8f6282558fb782cbc39dce97a"
   dependencies:
