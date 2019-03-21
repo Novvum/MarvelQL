@@ -12,8 +12,8 @@ const config = {
         MARVEL_PRIVATE_KEY: process.env.MARVEL_PRIVATE_KEY,
     },
     staging: {
-        MARVEL_API_KEY: process.env.MARVEL_API_KEY_STAGING || '07812287fdfb880f5ebdbf1e5b9fce53',
-        MARVEL_PRIVATE_KEY: process.env.MARVEL_PRIVATE_KEY_STAGING || 'e23c321aab355ba04371c1e50cef43823ab35752',
+        MARVEL_API_KEY: process.env.MARVEL_API_KEY_STAGING || 'ba0613cb148841f5091cb0075b5076d2', // '07812287fdfb880f5ebdbf1e5b9fce53',
+        MARVEL_PRIVATE_KEY: process.env.MARVEL_PRIVATE_KEY_STAGING || '140a52c97a8ef92f028d89a543e83d711f9e80a0' // 'e23c321aab355ba04371c1e50cef43823ab35752',
     }
 }
 
