@@ -1,12 +1,12 @@
 import MarvelApiModel from "./MarvelApiModel";
-import { CharacterWhereInput, CharacterOrderBy } from "../utils";
+import { NexusGenInputs, NexusGenEnums } from "../schema/typegen";
 import { formatThumbnail, getSummary } from "../utils/formatters";
 
 export default class CharacterModel extends MarvelApiModel {
 	constructor() {
 		super();
 	}
-	async getOne(where: CharacterWhereInput) {
+	async getOne(where: NexusGenInputs['CharacterWhereInput']) {
 		try {
 			const response = await this.marvel.get(`/characters`, { params: where });
 			return this.formatApiData(response.results[0]);
@@ -16,8 +16,8 @@ export default class CharacterModel extends MarvelApiModel {
 		}
 	}
 	async getMany(
-		where: CharacterWhereInput,
-		orderBy: CharacterOrderBy,
+		where: NexusGenInputs['CharacterWhereInput'],
+		orderBy: NexusGenEnums["CharacterOrderBy"],
 		offset: number,
 		limit: number
 	) {

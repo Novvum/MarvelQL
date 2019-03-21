@@ -1,6 +1,8 @@
 import MarvelApiModel from './MarvelApiModel';
-import { ComicWhereInput, ComicOrderBy, optionalChaining } from '../utils';
+import { optionalChaining } from '../utils';
 import { formatThumbnail, getSummary } from '../utils/formatters';
+import { NexusGenInputs, NexusGenEnums } from "../schema/typegen";
+
 
 export default class ComicModel extends MarvelApiModel {
 	constructor() {
@@ -22,7 +24,7 @@ export default class ComicModel extends MarvelApiModel {
 		}
 		return input;
 	}
-	async getOne(where: ComicWhereInput) {
+	async getOne(where: NexusGenInputs["ComicWhereInput"]) {
 		try {
 			const input = this.getWhereArgs(where);
 			const params = await this.createParams({
@@ -47,8 +49,8 @@ export default class ComicModel extends MarvelApiModel {
 		}
 	}
 	async getMany(
-		where: ComicWhereInput,
-		orderBy: ComicOrderBy,
+		where: NexusGenInputs["ComicWhereInput"],
+		orderBy: NexusGenEnums["ComicOrderBy"],
 		offset: number,
 		limit: number
 	) {

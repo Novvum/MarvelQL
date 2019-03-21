@@ -626,7 +626,7 @@ type Character implements MarvelNode {
 	"""
 	Lists of comics filtered by a character id.
 	"""
-	comics: [Summary!]
+	comics: [Comic!]
 	"""
 	Lists of series filtered by a character id.
 	"""
