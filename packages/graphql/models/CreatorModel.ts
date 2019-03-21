@@ -1,6 +1,6 @@
 import MarvelApiModel from './MarvelApiModel';
 import { formatThumbnail, getSummary } from '../utils/formatters';
-import { NexusGenInputs, NexusGenEnums } from "../schema/types";
+import { NexusGenInputs, NexusGenEnums } from "../schema/typegen";
 export default class CreatorModel extends MarvelApiModel {
 	constructor() {
 		super();

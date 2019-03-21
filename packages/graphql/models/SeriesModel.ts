@@ -1,7 +1,7 @@
 import MarvelApiModel from './MarvelApiModel';
 import { optionalChaining } from '../utils';
 import { formatThumbnail, getSummary } from '../utils/formatters';
-import { NexusGenInputs, NexusGenEnums } from "../schema/types";
+import { NexusGenInputs, NexusGenEnums } from "../schema/typegen";
 
 export default class SeriesModel extends MarvelApiModel {
 	constructor() {

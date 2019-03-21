@@ -1,5 +1,5 @@
 import MarvelApiModel from "./MarvelApiModel";
-import { NexusGenInputs, NexusGenEnums } from "../schema/types";
+import { NexusGenInputs, NexusGenEnums } from "../schema/typegen";
 import { formatThumbnail, getSummary } from "../utils/formatters";
 
 export default class CharacterModel extends MarvelApiModel {

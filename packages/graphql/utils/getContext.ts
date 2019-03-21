@@ -1,5 +1,3 @@
-import * as jwt from "jsonwebtoken";
-// import { Prisma } from "../generated/prisma";
 import MarvelApiModel from "../models/MarvelApiModel";
 import CharacterModel from "../models/CharacterModel";
 import ComicModel from "../models/ComicModel";
@@ -7,7 +5,7 @@ import CreatorModel from "../models/CreatorModel";
 import EventModel from "../models/EventModel";
 import SeriesModel from "../models/SeriesModel";
 import StoryModel from "../models/StoryModel";
-import dataImporter from '@marvelql/data/src/data';
+import dataImporter from '../../data/src/data';
 
 type DataModel = {
 	[key: string]: any;

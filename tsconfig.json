@@ -10,6 +10,7 @@
       "es2017",
       "esnext.asynciterable"
     ],
+    "noEmit": false,
     "module": "esnext",
     "moduleResolution": "node",
     "sourceMap": true,
