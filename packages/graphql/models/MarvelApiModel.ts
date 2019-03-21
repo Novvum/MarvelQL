@@ -25,4 +25,9 @@ export default class MarvelApiModel {
 		}
 		return orderByDirectory[type][arg];
 	}
+	async get(endpoint, { params }) {
+		const qs = await this.createParams(params);
+		const response = await this.marvel.get(`/characters?${qs}`);
+		return response.data.data;
+	}
 }

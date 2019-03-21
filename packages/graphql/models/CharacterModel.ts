@@ -8,12 +8,8 @@ export default class CharacterModel extends MarvelApiModel {
 	}
 	async getOne(where: NexusGenInputs['CharacterWhereInput']) {
 		try {
-			const params = await this.createParams({
-				...where
-			});
-
-			const response = await this.marvel.get(`/characters?${params}`);
-			return this.formatApiData(response.data.data.results[0]);
+			const response = await this.marvel.get(`/characters`, { params: where });
+			return this.formatApiData(response.results[0]);
 		} catch (error) {
 			console.error(error);
 			throw new Error(error);
@@ -26,15 +22,15 @@ export default class CharacterModel extends MarvelApiModel {
 		limit: number
 	) {
 		try {
-			const params = await this.createParams({
-				...where,
-				orderBy: this.getOrderBy(orderBy, "characters"),
-				offset,
-				limit
+			const response = await this.get(`/characters`, {
+				params: {
+					...where,
+					orderBy: this.getOrderBy(orderBy, "characters"),
+					offset,
+					limit
+				}
 			});
-
-			const response = await this.marvel.get(`/characters?${params}`);
-			return response.data.data.results.map((item) => this.formatApiData(item));
+			return response.results.map((item) => this.formatApiData(item));
 		} catch (error) {
 			console.error(error);
 			throw new Error(error);
