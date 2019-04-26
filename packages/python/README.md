@@ -25,27 +25,25 @@ on how to use graphql with python.
 
 You need install Flask, Graphene, flask-graphene, and marvelous using pip
 
-1. pip install graphene
-2. pip install Flask
-3. pip install Flask-GraphQL
-4. pip install marvelous
+`pip install graphene Flask Flask-GraphQL marvelous`
+
+### Usage
+
+In order to run the project, you need to type `python3 server.py` in your terminal
+This will start your flask server and return the link http://127.0.0.1:5000/
+
+Click on the link and change it to http://127.0.0.1:5000/graphql so you can start
+querying the marvel API.
 
 ### Files
 
 There are 4 files that interact with each other.
 
-1. getData.py - Retrieves the data from the Marvel API using marvelous
-2. marvelTypes.py - Has all the types being used for queries
-3. schema.py - Has the root query that creates the queries and resolvers
-4. server.py - Has the flask code needed to run the graphql interface to type queries
+1. `getData.py` - Retrieves the data from the Marvel API using marvelous
+2. `marvelTypes.py` - Has all the types being used for queries
+3. `schema.py` - Has the root query that creates the queries and resolvers
+4. `server.py` - Has the flask code needed to run the graphql interface to type queries
 
-### Usage
-
-In order to run the project, you need to type python3 server.py in your terminal
-This will start your flask server and return the link http://127.0.0.1:5000/
-
-Click on the link and change it to http://127.0.0.1:5000/graphql so you can start
-querying the marvel API.
 
 ### Contributing
 
