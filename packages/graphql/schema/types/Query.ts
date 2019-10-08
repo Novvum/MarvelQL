@@ -1,5 +1,6 @@
 import { objectType, arg, intArg } from 'nexus';
 import config from '../../config';
+import { NexusGenArgTypes } from '../typegen';
 export const Query = objectType({
     name: "Query",
     definition(t) {
@@ -13,13 +14,23 @@ export const Query = objectType({
                 limit: intArg({ description: "Limit the result set to the specified number of resources." }),
                 orderBy: arg({ type: "CharacterOrderBy" }),
             },
-            async resolve(_, args, ctx, info) {
-                return await ctx.charactersModel.getMany(
-                    args.where,
-                    args.orderBy,
-                    args.limit,
-                    args.offset
-                );
+            async resolve(
+              _,
+              {
+                where,
+                orderBy,
+                limit,
+                offset,
+              }: NexusGenArgTypes['Query']['characters'],
+              ctx, 
+              info,
+            ) {
+              return await ctx.charactersModel.getMany({
+                where,
+                orderBy,
+                limit,
+                offset,
+              });
             },
         });
         t.field("getCharacter", {
