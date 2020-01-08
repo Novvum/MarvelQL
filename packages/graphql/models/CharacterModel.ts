@@ -15,12 +15,17 @@ export default class CharacterModel extends MarvelApiModel {
 			throw new Error(error);
 		}
 	}
-	async getMany(
-		where: NexusGenInputs['CharacterWhereInput'],
-		orderBy: NexusGenEnums["CharacterOrderBy"],
-		offset: number,
-		limit: number
-	) {
+	async getMany({
+		where,
+		orderBy,
+		offset,
+		limit,
+	}: {
+		where: NexusGenInputs['CharacterWhereInput'];
+		orderBy: NexusGenEnums['CharacterOrderBy'];
+		offset: number;
+		limit: number;
+	}) {
 		try {
 			const response = await this.get(`/characters`, {
 				params: {

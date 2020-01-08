@@ -1,14 +1,15 @@
 import { Context } from '../utils/getContext';
 import config from '../config';
+import { NexusGenArgTypes } from '../schema/typegen';
 
 export const Query = {
-	async characters(_, args, ctx: Context, info) {
-		return await ctx.charactersModel.getMany(
-			args.where,
-			args.orderBy,
-			args.limit,
-			args.offset
-		);
+	async characters(
+		_,
+		{ where, orderBy, limit, offset }: NexusGenArgTypes['Query']['characters'],
+		ctx: Context,
+		info,
+	) {
+		return await ctx.charactersModel.getMany({ where, orderBy, limit, offset });
 	},
 	async getCharacter(_, args, ctx: Context, info) {
 		return await ctx.charactersModel.getOne(args.where);
