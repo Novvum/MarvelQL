@@ -15,22 +15,22 @@ export const Query = objectType({
                 orderBy: arg({ type: "CharacterOrderBy" }),
             },
             async resolve(
-              _,
-              {
-                where,
-                orderBy,
-                limit,
-                offset,
-              }: NexusGenArgTypes['Query']['characters'],
-              ctx, 
-              info,
+                _,
+                {
+                    where,
+                    orderBy,
+                    limit,
+                    offset,
+                }: NexusGenArgTypes['Query']['characters'],
+                ctx, 
+                info,
             ) {
-              return await ctx.charactersModel.getMany({
-                where,
-                orderBy,
-                limit,
-                offset,
-              });
+                return await ctx.charactersModel.getMany({
+                    where,
+                    orderBy,
+                    limit,
+                    offset,
+                });
             },
         });
         t.field("getCharacter", {
