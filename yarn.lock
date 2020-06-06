@@ -2,11 +2,35 @@
 # yarn lockfile v1
 
 
-"@apollographql/apollo-tools@0.3.5", "@apollographql/apollo-tools@^0.3.0", "@apollographql/apollo-tools@^0.3.3":
+"@apollo/protobufjs@^1.0.3":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@apollo/protobufjs/-/protobufjs-1.0.4.tgz#cf01747a55359066341f31b5ce8db17df44244e0"
+  dependencies:
+    "@protobufjs/aspromise" "^1.1.2"
+    "@protobufjs/base64" "^1.1.2"
+    "@protobufjs/codegen" "^2.0.4"
+    "@protobufjs/eventemitter" "^1.1.0"
+    "@protobufjs/fetch" "^1.1.0"
+    "@protobufjs/float" "^1.0.2"
+    "@protobufjs/inquire" "^1.1.0"
+    "@protobufjs/path" "^1.1.2"
+    "@protobufjs/pool" "^1.1.0"
+    "@protobufjs/utf8" "^1.1.0"
+    "@types/long" "^4.0.0"
+    "@types/node" "^10.1.0"
+    long "^4.0.0"
+
+"@apollographql/apollo-tools@0.3.5", "@apollographql/apollo-tools@^0.3.0":
   version "0.3.5"
   resolved "https://registry.npmjs.org/@apollographql/apollo-tools/-/apollo-tools-0.3.5.tgz#d4e860ca2300f90d183084390e2f1516cf775bf6"
   dependencies:
     apollo-env "0.4.0"
+
+"@apollographql/apollo-tools@^0.4.3":
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/@apollographql/apollo-tools/-/apollo-tools-0.4.8.tgz#d81da89ee880c2345eb86bddb92b35291f6135ed"
+  dependencies:
+    apollo-env "^0.6.5"
 
 "@apollographql/graphql-language-service-interface@^2.0.2":
   version "2.0.2"
@@ -31,6 +55,10 @@
   resolved "https://registry.npmjs.org/@apollographql/graphql-language-service-utils/-/graphql-language-service-utils-2.0.2.tgz#aa552c31de16172433bbdbc03914585caaca1d03"
   dependencies:
     "@apollographql/graphql-language-service-types" "^2.0.0"
+
+"@apollographql/graphql-playground-html@1.6.24":
+  version "1.6.24"
+  resolved "https://registry.yarnpkg.com/@apollographql/graphql-playground-html/-/graphql-playground-html-1.6.24.tgz#3ce939cb127fb8aaa3ffc1e90dff9b8af9f2e3dc"
 
 "@apollographql/graphql-playground-html@^1.6.6":
   version "1.6.6"
@@ -306,7 +334,7 @@
   version "0.7.0"
   resolved "https://registry.npmjs.org/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
-"@types/accepts@^1.3.5":
+"@types/accepts@*", "@types/accepts@^1.3.5":
   version "1.3.5"
   resolved "https://registry.npmjs.org/@types/accepts/-/accepts-1.3.5.tgz#c34bec115cfc746e04fe5a059df4ce7e7b391575"
   dependencies:
@@ -316,9 +344,16 @@
   version "2.4.2"
   resolved "https://registry.npmjs.org/@types/bcryptjs/-/bcryptjs-2.4.2.tgz#e3530eac9dd136bfdfb0e43df2c4c5ce1f77dfae"
 
-"@types/body-parser@*", "@types/body-parser@1.17.0":
+"@types/body-parser@*":
   version "1.17.0"
   resolved "https://registry.npmjs.org/@types/body-parser/-/body-parser-1.17.0.tgz#9f5c9d9bd04bb54be32d5eb9fc0d8c974e6cf58c"
+  dependencies:
+    "@types/connect" "*"
+    "@types/node" "*"
+
+"@types/body-parser@1.19.0":
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.0.tgz#0685b3c47eb3006ffed117cdd55164b61f80538f"
   dependencies:
     "@types/connect" "*"
     "@types/node" "*"
@@ -341,6 +376,19 @@
   dependencies:
     "@types/node" "*"
 
+"@types/content-disposition@*":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@types/content-disposition/-/content-disposition-0.5.3.tgz#0aa116701955c2faa0717fc69cd1596095e49d96"
+
+"@types/cookies@*":
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/@types/cookies/-/cookies-0.7.4.tgz#26dedf791701abc0e36b5b79a5722f40e455f87b"
+  dependencies:
+    "@types/connect" "*"
+    "@types/express" "*"
+    "@types/keygrip" "*"
+    "@types/node" "*"
+
 "@types/cors@^2.8.4":
   version "2.8.4"
   resolved "https://registry.npmjs.org/@types/cors/-/cors-2.8.4.tgz#50991a759a29c0b89492751008c6af7a7c8267b0"
@@ -358,7 +406,7 @@
     "@types/node" "*"
     "@types/range-parser" "*"
 
-"@types/express@*", "@types/express@4.16.1", "@types/express@^4.16.1":
+"@types/express@*", "@types/express@^4.16.1":
   version "4.16.1"
   resolved "https://registry.npmjs.org/@types/express/-/express-4.16.1.tgz#d756bd1a85c34d87eaf44c888bad27ba8a4b7cf0"
   dependencies:
@@ -366,9 +414,24 @@
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
 
+"@types/express@4.17.4":
+  version "4.17.4"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.4.tgz#e78bf09f3f530889575f4da8a94cd45384520aac"
+  dependencies:
+    "@types/body-parser" "*"
+    "@types/express-serve-static-core" "*"
+    "@types/qs" "*"
+    "@types/serve-static" "*"
+
 "@types/form-data@0.0.33":
   version "0.0.33"
   resolved "https://registry.npmjs.org/@types/form-data/-/form-data-0.0.33.tgz#c9ac85b2a5fd18435b8c85d9ecb50e6d6c893ff8"
+  dependencies:
+    "@types/node" "*"
+
+"@types/fs-capacitor@*":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/fs-capacitor/-/fs-capacitor-2.0.0.tgz#17113e25817f584f58100fb7a08eed288b81956e"
   dependencies:
     "@types/node" "*"
 
@@ -378,14 +441,49 @@
   dependencies:
     "@types/node" "*"
 
+"@types/graphql-upload@^8.0.0":
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/@types/graphql-upload/-/graphql-upload-8.0.3.tgz#b371edb5f305a2a1f7b7843a890a2a7adc55c3ec"
+  dependencies:
+    "@types/express" "*"
+    "@types/fs-capacitor" "*"
+    "@types/koa" "*"
+    graphql "^14.5.3"
+
 "@types/graphql@^14.0.5":
   version "14.0.7"
   resolved "https://registry.npmjs.org/@types/graphql/-/graphql-14.0.7.tgz#daa09397220a68ce1cbb3f76a315ff3cd92312f6"
+
+"@types/http-assert@*":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@types/http-assert/-/http-assert-1.5.1.tgz#d775e93630c2469c2f980fc27e3143240335db3b"
 
 "@types/jsonwebtoken@^8.3.0":
   version "8.3.2"
   resolved "https://registry.npmjs.org/@types/jsonwebtoken/-/jsonwebtoken-8.3.2.tgz#e3d5245197152346fae7ee87d5541aa5a92d0362"
   dependencies:
+    "@types/node" "*"
+
+"@types/keygrip@*":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/keygrip/-/keygrip-1.0.2.tgz#513abfd256d7ad0bf1ee1873606317b33b1b2a72"
+
+"@types/koa-compose@*":
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/@types/koa-compose/-/koa-compose-3.2.5.tgz#85eb2e80ac50be95f37ccf8c407c09bbe3468e9d"
+  dependencies:
+    "@types/koa" "*"
+
+"@types/koa@*":
+  version "2.11.3"
+  resolved "https://registry.yarnpkg.com/@types/koa/-/koa-2.11.3.tgz#540ece376581b12beadf9a417dd1731bc31c16ce"
+  dependencies:
+    "@types/accepts" "*"
+    "@types/content-disposition" "*"
+    "@types/cookies" "*"
+    "@types/http-assert" "*"
+    "@types/keygrip" "*"
+    "@types/koa-compose" "*"
     "@types/node" "*"
 
 "@types/long@^4.0.0":
@@ -413,6 +511,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/node-fetch@2.5.7":
+  version "2.5.7"
+  resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.5.7.tgz#20a2afffa882ab04d44ca786449a276f9f6bbf3c"
+  dependencies:
+    "@types/node" "*"
+    form-data "^3.0.0"
+
 "@types/node@*":
   version "11.11.4"
   resolved "https://registry.npmjs.org/@types/node/-/node-11.11.4.tgz#8808bd5a82bbf6f5d412eff1c228d178e7c24bb3"
@@ -428,6 +533,10 @@
 "@types/prettier@^1.13.2":
   version "1.16.1"
   resolved "https://registry.npmjs.org/@types/prettier/-/prettier-1.16.1.tgz#328d1c9b54402e44119398bcb6a31b7bbd606d59"
+
+"@types/qs@*":
+  version "6.9.3"
+  resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.3.tgz#b755a0934564a200d3efdf88546ec93c369abd03"
 
 "@types/range-parser@*":
   version "1.2.3"
@@ -463,6 +572,12 @@
     "@types/events" "*"
     "@types/node" "*"
 
+"@types/ws@^7.0.0":
+  version "7.2.5"
+  resolved "https://registry.yarnpkg.com/@types/ws/-/ws-7.2.5.tgz#513f28b04a1ea1aa9dc2cad3f26e8e37c88aae49"
+  dependencies:
+    "@types/node" "*"
+
 "@typescript-eslint/eslint-plugin@^1.4.1":
   version "1.4.2"
   resolved "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-1.4.2.tgz#370bc32022d1cc884a5dcf62624ef2024182769d"
@@ -487,12 +602,19 @@
     lodash.unescape "4.0.1"
     semver "5.5.0"
 
-accepts@^1.3.5, accepts@~1.3.5:
+accepts@^1.3.5:
   version "1.3.5"
   resolved "https://registry.npmjs.org/accepts/-/accepts-1.3.5.tgz#eb777df6011723a3b14e8a72c0805c8e86746bd2"
   dependencies:
     mime-types "~2.1.18"
     negotiator "0.6.1"
+
+accepts@~1.3.7:
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.7.tgz#531bc726517a3b2b41f850021c6cc15eaab507cd"
+  dependencies:
+    mime-types "~2.1.24"
+    negotiator "0.6.2"
 
 acorn-jsx@^5.0.0:
   version "5.0.1"
@@ -585,12 +707,12 @@ apollo-cache-control@0.4.1:
     apollo-server-env "2.2.0"
     graphql-extensions "0.4.2"
 
-apollo-cache-control@0.5.2:
-  version "0.5.2"
-  resolved "https://registry.npmjs.org/apollo-cache-control/-/apollo-cache-control-0.5.2.tgz#47931ede0b11c64d45429850c274b30d19322362"
+apollo-cache-control@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/apollo-cache-control/-/apollo-cache-control-0.11.0.tgz#7075492d04c5424e7c6769380b503e8f75b39d61"
   dependencies:
-    apollo-server-env "2.2.0"
-    graphql-extensions "0.5.4"
+    apollo-server-env "^2.4.4"
+    apollo-server-plugin-base "^0.9.0"
 
 apollo-codegen-core@0.32.10:
   version "0.32.10"
@@ -656,12 +778,19 @@ apollo-datasource@0.2.2:
     apollo-server-caching "0.2.2"
     apollo-server-env "2.2.0"
 
-apollo-datasource@0.3.1, apollo-datasource@^0.3.0:
+apollo-datasource@^0.3.0:
   version "0.3.1"
   resolved "https://registry.npmjs.org/apollo-datasource/-/apollo-datasource-0.3.1.tgz#4b7ec4c2dd7d08eb7edc865b95fd46b83a4679fd"
   dependencies:
     apollo-server-caching "0.3.1"
     apollo-server-env "2.2.0"
+
+apollo-datasource@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/apollo-datasource/-/apollo-datasource-0.7.1.tgz#0b06da999ace50b7f5fe509f2a03f7de97974334"
+  dependencies:
+    apollo-server-caching "^0.5.1"
+    apollo-server-env "^2.4.4"
 
 apollo-engine-reporting-protobuf@0.2.0:
   version "0.2.0"
@@ -669,11 +798,11 @@ apollo-engine-reporting-protobuf@0.2.0:
   dependencies:
     protobufjs "^6.8.6"
 
-apollo-engine-reporting-protobuf@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/apollo-engine-reporting-protobuf/-/apollo-engine-reporting-protobuf-0.2.1.tgz#8547efcb4078a501ddf606cbfe01a2e8c3ba1afd"
+apollo-engine-reporting-protobuf@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/apollo-engine-reporting-protobuf/-/apollo-engine-reporting-protobuf-0.5.1.tgz#b6e66e6e382f9bcdc2ac8ed168b047eb1470c1a8"
   dependencies:
-    protobufjs "^6.8.6"
+    "@apollo/protobufjs" "^1.0.3"
 
 apollo-engine-reporting@0.2.2:
   version "0.2.2"
@@ -686,16 +815,19 @@ apollo-engine-reporting@0.2.2:
     graphql-extensions "0.4.3"
     lodash "^4.17.10"
 
-apollo-engine-reporting@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.npmjs.org/apollo-engine-reporting/-/apollo-engine-reporting-1.0.7.tgz#d326b51b12b1f71a40885b8189dbcd162171c953"
+apollo-engine-reporting@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/apollo-engine-reporting/-/apollo-engine-reporting-2.0.0.tgz#af007b4a8a481fa97baef0eac51a7824f1ec3310"
   dependencies:
-    apollo-engine-reporting-protobuf "0.2.1"
-    apollo-graphql "^0.1.0"
-    apollo-server-core "2.4.8"
-    apollo-server-env "2.2.0"
+    apollo-engine-reporting-protobuf "^0.5.1"
+    apollo-graphql "^0.4.0"
+    apollo-server-caching "^0.5.1"
+    apollo-server-env "^2.4.4"
+    apollo-server-errors "^2.4.1"
+    apollo-server-plugin-base "^0.9.0"
+    apollo-server-types "^0.5.0"
     async-retry "^1.2.1"
-    graphql-extensions "0.5.7"
+    uuid "^8.0.0"
 
 apollo-env@0.4.0:
   version "0.4.0"
@@ -705,11 +837,20 @@ apollo-env@0.4.0:
     node-fetch "^2.2.0"
     sha.js "^2.4.11"
 
-apollo-graphql@^0.1.0:
-  version "0.1.3"
-  resolved "https://registry.npmjs.org/apollo-graphql/-/apollo-graphql-0.1.3.tgz#98f9e6bb98ec08ae0dea6f125f640acf6de3f31f"
+apollo-env@^0.6.5:
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/apollo-env/-/apollo-env-0.6.5.tgz#5a36e699d39e2356381f7203493187260fded9f3"
   dependencies:
-    apollo-env "0.4.0"
+    "@types/node-fetch" "2.5.7"
+    core-js "^3.0.1"
+    node-fetch "^2.2.0"
+    sha.js "^2.4.11"
+
+apollo-graphql@^0.4.0:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/apollo-graphql/-/apollo-graphql-0.4.4.tgz#25f456b28a4419bb6a42071f8a56e19e15bb80be"
+  dependencies:
+    apollo-env "^0.6.5"
     lodash.sortby "^4.7.0"
 
 apollo-language-server@1.5.4:
@@ -803,6 +944,12 @@ apollo-server-caching@0.3.1:
   dependencies:
     lru-cache "^5.0.0"
 
+apollo-server-caching@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/apollo-server-caching/-/apollo-server-caching-0.5.1.tgz#5cd0536ad5473abb667cc82b59bc56b96fb35db6"
+  dependencies:
+    lru-cache "^5.0.0"
+
 apollo-server-core@2.3.4:
   version "2.3.4"
   resolved "https://registry.npmjs.org/apollo-server-core/-/apollo-server-core-2.3.4.tgz#556829fa788c09b7a9a3bded5f0b99d5eebd7393"
@@ -828,27 +975,29 @@ apollo-server-core@2.3.4:
     subscriptions-transport-ws "^0.9.11"
     ws "^6.0.0"
 
-apollo-server-core@2.4.8:
-  version "2.4.8"
-  resolved "https://registry.npmjs.org/apollo-server-core/-/apollo-server-core-2.4.8.tgz#47e503a345e314222725597c889773e018d8c67a"
+apollo-server-core@^2.14.2:
+  version "2.14.2"
+  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.14.2.tgz#4ab055b96b8be7821a726c81e8aa412deb7f3644"
   dependencies:
-    "@apollographql/apollo-tools" "^0.3.3"
-    "@apollographql/graphql-playground-html" "^1.6.6"
-    "@types/ws" "^6.0.0"
-    apollo-cache-control "0.5.2"
-    apollo-datasource "0.3.1"
-    apollo-engine-reporting "1.0.7"
-    apollo-server-caching "0.3.1"
-    apollo-server-env "2.2.0"
-    apollo-server-errors "2.2.1"
-    apollo-server-plugin-base "0.3.7"
-    apollo-tracing "0.5.2"
+    "@apollographql/apollo-tools" "^0.4.3"
+    "@apollographql/graphql-playground-html" "1.6.24"
+    "@types/graphql-upload" "^8.0.0"
+    "@types/ws" "^7.0.0"
+    apollo-cache-control "^0.11.0"
+    apollo-datasource "^0.7.1"
+    apollo-engine-reporting "^2.0.0"
+    apollo-server-caching "^0.5.1"
+    apollo-server-env "^2.4.4"
+    apollo-server-errors "^2.4.1"
+    apollo-server-plugin-base "^0.9.0"
+    apollo-server-types "^0.5.0"
+    apollo-tracing "^0.11.0"
     fast-json-stable-stringify "^2.0.0"
-    graphql-extensions "0.5.7"
-    graphql-subscriptions "^1.0.0"
+    graphql-extensions "^0.12.2"
     graphql-tag "^2.9.2"
     graphql-tools "^4.0.0"
     graphql-upload "^8.0.2"
+    loglevel "^1.6.7"
     sha.js "^2.4.11"
     subscriptions-transport-ws "^0.9.11"
     ws "^6.0.0"
@@ -860,45 +1009,70 @@ apollo-server-env@2.2.0:
     node-fetch "^2.1.2"
     util.promisify "^1.0.0"
 
+apollo-server-env@^2.4.4:
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/apollo-server-env/-/apollo-server-env-2.4.4.tgz#12d2d0896dcb184478cba066c7a683ab18689ca1"
+  dependencies:
+    node-fetch "^2.1.2"
+    util.promisify "^1.0.0"
+
 apollo-server-errors@2.2.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/apollo-server-errors/-/apollo-server-errors-2.2.0.tgz#5b452a1d6ff76440eb0f127511dc58031a8f3cb5"
 
-apollo-server-errors@2.2.1, apollo-server-errors@^2.0.2:
+apollo-server-errors@^2.0.2:
   version "2.2.1"
   resolved "https://registry.npmjs.org/apollo-server-errors/-/apollo-server-errors-2.2.1.tgz#f68a3f845929768057da7e1c6d30517db5872205"
 
-apollo-server-express@2.4.8:
-  version "2.4.8"
-  resolved "https://registry.npmjs.org/apollo-server-express/-/apollo-server-express-2.4.8.tgz#ec9eb61a87324555d49097e9fade3c7d142eb6cb"
+apollo-server-errors@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/apollo-server-errors/-/apollo-server-errors-2.4.1.tgz#16ad49de6c9134bfb2b7dede9842e73bb239dbe2"
+
+apollo-server-express@^2.14.2:
+  version "2.14.2"
+  resolved "https://registry.yarnpkg.com/apollo-server-express/-/apollo-server-express-2.14.2.tgz#662dfeb9c794c1eca59dd93e57e74487a8195ae6"
   dependencies:
-    "@apollographql/graphql-playground-html" "^1.6.6"
+    "@apollographql/graphql-playground-html" "1.6.24"
     "@types/accepts" "^1.3.5"
-    "@types/body-parser" "1.17.0"
+    "@types/body-parser" "1.19.0"
     "@types/cors" "^2.8.4"
-    "@types/express" "4.16.1"
+    "@types/express" "4.17.4"
     accepts "^1.3.5"
-    apollo-server-core "2.4.8"
+    apollo-server-core "^2.14.2"
+    apollo-server-types "^0.5.0"
     body-parser "^1.18.3"
     cors "^2.8.4"
+    express "^4.17.1"
     graphql-subscriptions "^1.0.0"
     graphql-tools "^4.0.0"
+    parseurl "^1.3.2"
+    subscriptions-transport-ws "^0.9.16"
     type-is "^1.6.16"
 
 apollo-server-plugin-base@0.2.3:
   version "0.2.3"
   resolved "https://registry.npmjs.org/apollo-server-plugin-base/-/apollo-server-plugin-base-0.2.3.tgz#fe2df5acefbb0eead032cf559e4f65bb06b36bad"
 
-apollo-server-plugin-base@0.3.7:
-  version "0.3.7"
-  resolved "https://registry.npmjs.org/apollo-server-plugin-base/-/apollo-server-plugin-base-0.3.7.tgz#bfa4932fc9481bb36221545578d311db464af5a6"
-
-apollo-server@^2.3.3:
-  version "2.4.8"
-  resolved "https://registry.npmjs.org/apollo-server/-/apollo-server-2.4.8.tgz#b18ec24e6356dd2a191a6fa0f1429b07ef7c89e3"
+apollo-server-plugin-base@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/apollo-server-plugin-base/-/apollo-server-plugin-base-0.9.0.tgz#777f720a1ee827a66b8c159073ca30645f8bc625"
   dependencies:
-    apollo-server-core "2.4.8"
-    apollo-server-express "2.4.8"
+    apollo-server-types "^0.5.0"
+
+apollo-server-types@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/apollo-server-types/-/apollo-server-types-0.5.0.tgz#51f39c5fa610ece8b07f1fbcf63c47d4ac150340"
+  dependencies:
+    apollo-engine-reporting-protobuf "^0.5.1"
+    apollo-server-caching "^0.5.1"
+    apollo-server-env "^2.4.4"
+
+apollo-server@^2.14.2:
+  version "2.14.2"
+  resolved "https://registry.yarnpkg.com/apollo-server/-/apollo-server-2.14.2.tgz#65167305479d36e96e6f0d08ac201aa6c7571a44"
+  dependencies:
+    apollo-server-core "^2.14.2"
+    apollo-server-express "^2.14.2"
     express "^4.0.0"
     graphql-subscriptions "^1.0.0"
     graphql-tools "^4.0.0"
@@ -910,12 +1084,12 @@ apollo-tracing@0.4.1:
     apollo-server-env "2.2.0"
     graphql-extensions "0.4.2"
 
-apollo-tracing@0.5.2:
-  version "0.5.2"
-  resolved "https://registry.npmjs.org/apollo-tracing/-/apollo-tracing-0.5.2.tgz#cc49936fb435fa98d19c841514cfe05237c85b33"
+apollo-tracing@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/apollo-tracing/-/apollo-tracing-0.11.0.tgz#8821eb60692f77c06660fb6bc147446f600aecfe"
   dependencies:
-    apollo-server-env "2.2.0"
-    graphql-extensions "0.5.4"
+    apollo-server-env "^2.4.4"
+    apollo-server-plugin-base "^0.9.0"
 
 apollo-utilities@^1.0.1, apollo-utilities@^1.2.1:
   version "1.2.1"
@@ -1204,7 +1378,22 @@ bluebird@^3.5.1:
   version "3.5.3"
   resolved "https://registry.npmjs.org/bluebird/-/bluebird-3.5.3.tgz#7d01c6f9616c9a51ab0f8c549a79dfe6ec33efa7"
 
-body-parser@1.18.3, body-parser@^1.18.3:
+body-parser@1.19.0:
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
+  dependencies:
+    bytes "3.1.0"
+    content-type "~1.0.4"
+    debug "2.6.9"
+    depd "~1.1.2"
+    http-errors "1.7.2"
+    iconv-lite "0.4.24"
+    on-finished "~2.3.0"
+    qs "6.7.0"
+    raw-body "2.4.0"
+    type-is "~1.6.17"
+
+body-parser@^1.18.3:
   version "1.18.3"
   resolved "https://registry.npmjs.org/body-parser/-/body-parser-1.18.3.tgz#5b292198ffdd553b3a0f20ded0592b956955c8b4"
   dependencies:
@@ -1308,6 +1497,10 @@ byline@5.0.0:
 bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
+
+bytes@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
 
 cache-base@^1.0.1:
   version "1.0.1"
@@ -1632,6 +1825,12 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
+combined-stream@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/combined-stream/-/combined-stream-1.0.8.tgz#c3d45a8b34fd730631a110a8a2520682b31d5a7f"
+  dependencies:
+    delayed-stream "~1.0.0"
+
 commander@^2.11.0, commander@^2.9.0:
   version "2.19.0"
   resolved "https://registry.npmjs.org/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
@@ -1688,9 +1887,11 @@ contains-path@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/contains-path/-/contains-path-0.1.0.tgz#fe8cf184ff6670b6baef01a9d4861a5cbec4120a"
 
-content-disposition@0.5.2:
-  version "0.5.2"
-  resolved "https://registry.npmjs.org/content-disposition/-/content-disposition-0.5.2.tgz#0cf68bb9ddf5f2be7961c3a85178cb85dba78cb4"
+content-disposition@0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/content-disposition/-/content-disposition-0.5.3.tgz#e130caf7e7279087c5616c2007d0485698984fbd"
+  dependencies:
+    safe-buffer "5.1.2"
 
 content-type@^1.0.4, content-type@~1.0.4:
   version "1.0.4"
@@ -1704,6 +1905,10 @@ cookie@0.3.1:
   version "0.3.1"
   resolved "https://registry.npmjs.org/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
 
+cookie@0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.4.0.tgz#beb437e7022b3b6d49019d088665303ebe9c14ba"
+
 copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "https://registry.npmjs.org/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
@@ -1715,6 +1920,10 @@ core-js@3.0.0-beta.13:
 core-js@^2.4.0, core-js@^2.5.0:
   version "2.6.5"
   resolved "https://registry.npmjs.org/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
+
+core-js@^3.0.1:
+  version "3.6.5"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -2353,38 +2562,38 @@ express-request-proxy@^2.0.0:
     type-is "^1.6.16"
     url-join "4.0.0"
 
-express@^4.0.0, express@^4.16.3:
-  version "4.16.4"
-  resolved "https://registry.npmjs.org/express/-/express-4.16.4.tgz#fddef61926109e24c515ea97fd2f1bdbf62df12e"
+express@^4.0.0, express@^4.16.3, express@^4.17.1:
+  version "4.17.1"
+  resolved "https://registry.yarnpkg.com/express/-/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
   dependencies:
-    accepts "~1.3.5"
+    accepts "~1.3.7"
     array-flatten "1.1.1"
-    body-parser "1.18.3"
-    content-disposition "0.5.2"
+    body-parser "1.19.0"
+    content-disposition "0.5.3"
     content-type "~1.0.4"
-    cookie "0.3.1"
+    cookie "0.4.0"
     cookie-signature "1.0.6"
     debug "2.6.9"
     depd "~1.1.2"
     encodeurl "~1.0.2"
     escape-html "~1.0.3"
     etag "~1.8.1"
-    finalhandler "1.1.1"
+    finalhandler "~1.1.2"
     fresh "0.5.2"
     merge-descriptors "1.0.1"
     methods "~1.1.2"
     on-finished "~2.3.0"
-    parseurl "~1.3.2"
+    parseurl "~1.3.3"
     path-to-regexp "0.1.7"
-    proxy-addr "~2.0.4"
-    qs "6.5.2"
-    range-parser "~1.2.0"
+    proxy-addr "~2.0.5"
+    qs "6.7.0"
+    range-parser "~1.2.1"
     safe-buffer "5.1.2"
-    send "0.16.2"
-    serve-static "1.13.2"
-    setprototypeof "1.1.0"
-    statuses "~1.4.0"
-    type-is "~1.6.16"
+    send "0.17.1"
+    serve-static "1.14.1"
+    setprototypeof "1.1.1"
+    statuses "~1.5.0"
+    type-is "~1.6.18"
     utils-merge "1.0.1"
     vary "~1.1.2"
 
@@ -2499,16 +2708,16 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
-finalhandler@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/finalhandler/-/finalhandler-1.1.1.tgz#eebf4ed840079c83f4249038c9d703008301b105"
+finalhandler@~1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/finalhandler/-/finalhandler-1.1.2.tgz#b7e7d000ffd11938d0fdb053506f6ebabe9f587d"
   dependencies:
     debug "2.6.9"
     encodeurl "~1.0.2"
     escape-html "~1.0.3"
     on-finished "~2.3.0"
-    parseurl "~1.3.2"
-    statuses "~1.4.0"
+    parseurl "~1.3.3"
+    statuses "~1.5.0"
     unpipe "~1.0.0"
 
 find-babel-config@^1.1.0:
@@ -2573,6 +2782,14 @@ form-data@^2.0.0, form-data@~2.3.2:
   dependencies:
     asynckit "^0.4.0"
     combined-stream "^1.0.6"
+    mime-types "^2.1.12"
+
+form-data@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-3.0.0.tgz#31b7e39c85f1355b7139ee0c647cf0de7f83c682"
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
 forwarded@~0.1.2:
@@ -2821,17 +3038,13 @@ graphql-extensions@0.4.3:
   dependencies:
     "@apollographql/apollo-tools" "^0.3.0"
 
-graphql-extensions@0.5.4:
-  version "0.5.4"
-  resolved "https://registry.npmjs.org/graphql-extensions/-/graphql-extensions-0.5.4.tgz#18a9674f9adb11aa6c0737485887ea8877914cff"
+graphql-extensions@^0.12.2:
+  version "0.12.2"
+  resolved "https://registry.yarnpkg.com/graphql-extensions/-/graphql-extensions-0.12.2.tgz#f22210e812939b7caa2127589f30e6a1c671540f"
   dependencies:
-    "@apollographql/apollo-tools" "^0.3.3"
-
-graphql-extensions@0.5.7:
-  version "0.5.7"
-  resolved "https://registry.npmjs.org/graphql-extensions/-/graphql-extensions-0.5.7.tgz#2b647e4e36997dc85b7f58ebd64324a5250fb2cf"
-  dependencies:
-    "@apollographql/apollo-tools" "^0.3.3"
+    "@apollographql/apollo-tools" "^0.4.3"
+    apollo-server-env "^2.4.4"
+    apollo-server-types "^0.5.0"
 
 graphql-import@0.7.1, graphql-import@^0.7.1:
   version "0.7.1"
@@ -2892,6 +3105,12 @@ graphql-upload@^8.0.2:
 "graphql@^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0", "graphql@^0.13.0 || ^14.0.0", graphql@^14.0.0, graphql@^14.0.2, graphql@^14.1.1:
   version "14.1.1"
   resolved "https://registry.npmjs.org/graphql/-/graphql-14.1.1.tgz#d5d77df4b19ef41538d7215d1e7a28834619fac0"
+  dependencies:
+    iterall "^1.2.2"
+
+graphql@^14.5.3:
+  version "14.6.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.6.0.tgz#57822297111e874ea12f5cd4419616930cd83e49"
   dependencies:
     iterall "^1.2.2"
 
@@ -3049,7 +3268,7 @@ http-call@^5.2.2:
     is-stream "^1.1.0"
     tunnel-agent "^0.6.0"
 
-http-errors@1.6.3, http-errors@~1.6.2, http-errors@~1.6.3:
+http-errors@1.6.3, http-errors@~1.6.3:
   version "1.6.3"
   resolved "https://registry.npmjs.org/http-errors/-/http-errors-1.6.3.tgz#8b55680bb4be283a0b5bf4ea2e38580be1d9320d"
   dependencies:
@@ -3058,12 +3277,22 @@ http-errors@1.6.3, http-errors@~1.6.2, http-errors@~1.6.3:
     setprototypeof "1.1.0"
     statuses ">= 1.4.0 < 2"
 
-http-errors@^1.7.1:
+http-errors@1.7.2, http-errors@^1.7.1:
   version "1.7.2"
   resolved "https://registry.npmjs.org/http-errors/-/http-errors-1.7.2.tgz#4f5029cf13239f31036e5b2e55292bcfbcc85c8f"
   dependencies:
     depd "~1.1.2"
     inherits "2.0.3"
+    setprototypeof "1.1.1"
+    statuses ">= 1.5.0 < 2"
+    toidentifier "1.0.0"
+
+http-errors@~1.7.2:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.7.3.tgz#6c619e4f9c60308c38519498c14fbb10aacebb06"
+  dependencies:
+    depd "~1.1.2"
+    inherits "2.0.4"
     setprototypeof "1.1.1"
     statuses ">= 1.5.0 < 2"
     toidentifier "1.0.0"
@@ -3108,7 +3337,7 @@ iconv-lite@0.4.23:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-iconv-lite@^0.4.24, iconv-lite@~0.4.13:
+iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@~0.4.13:
   version "0.4.24"
   resolved "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
   dependencies:
@@ -3173,6 +3402,10 @@ inherits@2, inherits@2.0.3, inherits@^2.0.1, inherits@^2.0.3, inherits@~2.0.3:
   version "2.0.3"
   resolved "https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
 
+inherits@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
+
 ini@^1.3.4, ini@~1.3.0:
   version "1.3.5"
   resolved "https://registry.npmjs.org/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
@@ -3214,9 +3447,9 @@ invert-kv@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/invert-kv/-/invert-kv-2.0.0.tgz#7393f5afa59ec9ff5f67a27620d11c226e3eec02"
 
-ipaddr.js@1.8.0:
-  version "1.8.0"
-  resolved "https://registry.npmjs.org/ipaddr.js/-/ipaddr.js-1.8.0.tgz#eaa33d6ddd7ace8f7f6fe0c9ca0440e706738b1e"
+ipaddr.js@1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.9.1.tgz#bff38543eeb8984825079ff3a2a8e6cbd46781b3"
 
 is-accessor-descriptor@^0.1.6:
   version "0.1.6"
@@ -3949,6 +4182,10 @@ log-update@^2.3.0:
     cli-cursor "^2.0.0"
     wrap-ansi "^3.0.1"
 
+loglevel@^1.6.7:
+  version "1.6.8"
+  resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.8.tgz#8a25fb75d092230ecd4457270d80b54e28011171"
+
 long@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/long/-/long-4.0.0.tgz#9a7b71cfb7d361a194ea555241c92f7468d5bf28"
@@ -4123,6 +4360,10 @@ micromatch@^3.1.10:
     snapdragon "^0.8.1"
     to-regex "^3.0.2"
 
+mime-db@1.44.0:
+  version "1.44.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.44.0.tgz#fa11c5eb0aca1334b4233cb4d52f10c5a6272f92"
+
 mime-db@~1.38.0:
   version "1.38.0"
   resolved "https://registry.npmjs.org/mime-db/-/mime-db-1.38.0.tgz#1a2aab16da9eb167b49c6e4df2d9c68d63d8e2ad"
@@ -4133,9 +4374,15 @@ mime-types@^2.1.12, mime-types@~2.1.18, mime-types@~2.1.19:
   dependencies:
     mime-db "~1.38.0"
 
-mime@1.4.1:
-  version "1.4.1"
-  resolved "https://registry.npmjs.org/mime/-/mime-1.4.1.tgz#121f9ebc49e3766f311a76e1fa1c8003c4b03aa6"
+mime-types@~2.1.24:
+  version "2.1.27"
+  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.27.tgz#47949f98e279ea53119f5722e0f34e529bec009f"
+  dependencies:
+    mime-db "1.44.0"
+
+mime@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
 
 mimic-fn@^1.0.0:
   version "1.2.0"
@@ -4201,7 +4448,7 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-ms@^2.1.1:
+ms@2.1.1, ms@^2.1.1:
   version "2.1.1"
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
@@ -4254,6 +4501,10 @@ natural-orderby@^2.0.1:
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
+
+negotiator@0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
 
 netrc-parser@^3.1.4:
   version "3.1.6"
@@ -4608,9 +4859,9 @@ parse-json@^4.0.0:
     error-ex "^1.3.1"
     json-parse-better-errors "^1.0.1"
 
-parseurl@~1.3.2:
-  version "1.3.2"
-  resolved "https://registry.npmjs.org/parseurl/-/parseurl-1.3.2.tgz#fc289d4ed8993119460c156253262cdc8de65bf3"
+parseurl@^1.3.2, parseurl@~1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
 
 pascal-case@^2.0.0:
   version "2.0.1"
@@ -5076,12 +5327,12 @@ protochain@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/protochain/-/protochain-1.0.5.tgz#991c407e99de264aadf8f81504b5e7faf7bfa260"
 
-proxy-addr@~2.0.4:
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.4.tgz#ecfc733bf22ff8c6f407fa275327b9ab67e48b93"
+proxy-addr@~2.0.5:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-2.0.6.tgz#fdc2336505447d3f2f2c638ed272caf614bbb2bf"
   dependencies:
     forwarded "~0.1.2"
-    ipaddr.js "1.8.0"
+    ipaddr.js "1.9.1"
 
 prr@~1.0.1:
   version "1.0.1"
@@ -5114,6 +5365,10 @@ qs@6.5.2, qs@~6.5.2:
   version "6.5.2"
   resolved "https://registry.npmjs.org/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
+qs@6.7.0:
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
+
 query-string@^5.0.1:
   version "5.1.1"
   resolved "https://registry.npmjs.org/query-string/-/query-string-5.1.1.tgz#a78c012b71c17e05f2e3fa2319dd330682efb3cb"
@@ -5122,9 +5377,9 @@ query-string@^5.0.1:
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
 
-range-parser@~1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
+range-parser@~1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
 
 raven@2.6.4:
   version "2.6.4"
@@ -5143,6 +5398,15 @@ raw-body@2.3.3:
     bytes "3.0.0"
     http-errors "1.6.3"
     iconv-lite "0.4.23"
+    unpipe "1.0.0"
+
+raw-body@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.4.0.tgz#a1ce6fb9c9bc356ca52e89256ab59059e13d0332"
+  dependencies:
+    bytes "3.1.0"
+    http-errors "1.7.2"
+    iconv-lite "0.4.24"
     unpipe "1.0.0"
 
 rc@^1.0.1, rc@^1.1.6:
@@ -5455,9 +5719,9 @@ semver@5.5.0:
   version "5.5.0"
   resolved "https://registry.npmjs.org/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
-send@0.16.2:
-  version "0.16.2"
-  resolved "https://registry.npmjs.org/send/-/send-0.16.2.tgz#6ecca1e0f8c156d141597559848df64730a6bbc1"
+send@0.17.1:
+  version "0.17.1"
+  resolved "https://registry.yarnpkg.com/send/-/send-0.17.1.tgz#c1d8b059f7900f7466dd4938bdc44e11ddb376c8"
   dependencies:
     debug "2.6.9"
     depd "~1.1.2"
@@ -5466,12 +5730,12 @@ send@0.16.2:
     escape-html "~1.0.3"
     etag "~1.8.1"
     fresh "0.5.2"
-    http-errors "~1.6.2"
-    mime "1.4.1"
-    ms "2.0.0"
+    http-errors "~1.7.2"
+    mime "1.6.0"
+    ms "2.1.1"
     on-finished "~2.3.0"
-    range-parser "~1.2.0"
-    statuses "~1.4.0"
+    range-parser "~1.2.1"
+    statuses "~1.5.0"
 
 sentence-case@^2.1.0:
   version "2.1.1"
@@ -5490,14 +5754,14 @@ serializerr@^1.0.3:
   dependencies:
     protochain "^1.0.5"
 
-serve-static@1.13.2:
-  version "1.13.2"
-  resolved "https://registry.npmjs.org/serve-static/-/serve-static-1.13.2.tgz#095e8472fd5b46237db50ce486a43f4b86c6cec1"
+serve-static@1.14.1:
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/serve-static/-/serve-static-1.14.1.tgz#666e636dc4f010f7ef29970a88a674320898b2f9"
   dependencies:
     encodeurl "~1.0.2"
     escape-html "~1.0.3"
-    parseurl "~1.3.2"
-    send "0.16.2"
+    parseurl "~1.3.3"
+    send "0.17.1"
 
 set-blocking@^2.0.0:
   version "2.0.0"
@@ -5741,13 +6005,9 @@ static-extend@^0.1.1:
     define-property "^0.2.5"
     object-copy "^0.1.0"
 
-"statuses@>= 1.4.0 < 2", "statuses@>= 1.5.0 < 2":
+"statuses@>= 1.4.0 < 2", "statuses@>= 1.5.0 < 2", statuses@~1.5.0:
   version "1.5.0"
   resolved "https://registry.npmjs.org/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
-
-statuses@~1.4.0:
-  version "1.4.0"
-  resolved "https://registry.npmjs.org/statuses/-/statuses-1.4.0.tgz#bb73d446da2796106efcc1b601a253d6c46bd087"
 
 streamsearch@0.1.2:
   version "0.1.2"
@@ -5838,7 +6098,7 @@ strip-json-comments@^2.0.0, strip-json-comments@^2.0.1, strip-json-comments@~2.0
   version "2.0.1"
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-subscriptions-transport-ws@^0.9.11, subscriptions-transport-ws@^0.9.15:
+subscriptions-transport-ws@^0.9.11, subscriptions-transport-ws@^0.9.15, subscriptions-transport-ws@^0.9.16:
   version "0.9.16"
   resolved "https://registry.npmjs.org/subscriptions-transport-ws/-/subscriptions-transport-ws-0.9.16.tgz#90a422f0771d9c32069294c08608af2d47f596ec"
   dependencies:
@@ -6126,6 +6386,13 @@ type-is@^1.6.16, type-is@~1.6.16:
     media-typer "0.3.0"
     mime-types "~2.1.18"
 
+type-is@~1.6.17, type-is@~1.6.18:
+  version "1.6.18"
+  resolved "https://registry.yarnpkg.com/type-is/-/type-is-1.6.18.tgz#4e552cd05df09467dcbc4ef739de89f2cf37c131"
+  dependencies:
+    media-typer "0.3.0"
+    mime-types "~2.1.24"
+
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
@@ -6259,6 +6526,10 @@ utils-merge@1.0.1:
 uuid@3.3.2, uuid@^3.1.0, uuid@^3.3.2:
   version "3.3.2"
   resolved "https://registry.npmjs.org/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+
+uuid@^8.0.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.1.0.tgz#6f1536eb43249f473abc6bd58ff983da1ca30d8d"
 
 validate-npm-package-license@^3.0.1:
   version "3.0.4"
