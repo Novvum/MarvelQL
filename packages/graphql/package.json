@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "apollo-server": "^2.3.3",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "crypto": "1.0.1",
     "graphql": "^14.1.1",
